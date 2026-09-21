@@ -5,8 +5,8 @@ public:
             if (s[begin] != s[end]) {
                 return false;
             }
-            ++begin;
-            --end;
+            begin++;
+            end--;
         }
         return true;
     }
@@ -16,8 +16,8 @@ public:
             if (s[begin] != s[end]) {
                 return IsPalindrome(begin + 1, end, s) || IsPalindrome(begin, end - 1, s);
             }
-            ++begin;
-            --end;
+            begin++;
+            end--;
         }
         return true;
     }
