@@ -1,7 +1,6 @@
 class Solution(object):
     def reverseBits(self, n):
         ans = 0
-        bit = 0
         counter = 0
         while n:
             ans = ans * 2 + (n & 1)
@@ -11,6 +10,4 @@ class Solution(object):
             ans *= 2
             counter += 1
         return ans
-
-
-        
+      
