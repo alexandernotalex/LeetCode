@@ -7,17 +7,18 @@ class Solution(object):
         """
         left = 0
         right = 0
+        n = len(nums)
         curr_sum = nums[0]
-        ans = len(nums) + 1
-        while left < len(nums) and right < len(nums):
+        ans = n + 1
+        while left < n and right < n:
             if curr_sum >= target:
                 ans = min(ans, right - left + 1)
                 curr_sum -= nums[left]
                 left += 1
             else:
                 right += 1
-                if right < len(nums):
+                if right < n:
                     curr_sum += nums[right]
-        if ans == len(nums) + 1:
+        if ans == n + 1:
             return 0
         return ans
