@@ -4,7 +4,10 @@ class NumArray(object):
         """
         :type nums: List[int]
         """
-        self.nums = nums       
+        self.nums = nums
+        self.prefix_sum = [nums[0]] * len(self.nums)
+        for i in range(1, len(self.nums)):
+            self.prefix_sum[i] = self.prefix_sum[i - 1] + self.nums[i]        
 
     def sumRange(self, left, right):
         """
@@ -12,7 +15,9 @@ class NumArray(object):
         :type right: int
         :rtype: int
         """
-        return sum(self.nums[left:right + 1])
+        if left == 0:
+            return self.prefix_sum[right]
+        return self.prefix_sum[right] - self.prefix_sum[left - 1]
         
         
 
