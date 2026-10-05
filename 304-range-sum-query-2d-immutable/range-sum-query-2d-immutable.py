@@ -15,7 +15,6 @@ class NumMatrix(object):
             for j in range(1, len(matrix[0])):
                 self.prefix_sum[i][j] = self.prefix_sum[i - 1][j] + self.prefix_sum[i][j - 1] - self.prefix_sum[i - 1][j - 1] + self.matrix[i][j]
 
-
     def sumRegion(self, row1, col1, row2, col2):
         """
         :type row1: int
