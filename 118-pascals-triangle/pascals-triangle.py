@@ -4,8 +4,7 @@ class Solution(object):
         :type numRows: int
         :rtype: List[List[int]]
         """
-        ans = []
-        ans.append([1])
+        ans = [[1]]
         for i in range(numRows - 1):
             tmp = [1]
             for j in range(i):
